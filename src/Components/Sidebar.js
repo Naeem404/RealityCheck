@@ -7,13 +7,18 @@ import {data} from './data';
 function Sidebar() {
     return (
     <div className="Sidebar">
-        <ul>
+        <ul className= "SidebarList">
         {data.map((val,key)=> {
         return (
-            <li key= {key} onClick ={()=> {window.location.pathname = val.link}}> 
-            {" "}
-            <div> {val.icon}</div>{" "}
-            <div>
+            <li 
+            key= {key} 
+            className="row"
+            onClick ={()=> {window.location.pathname = val.link}}
+
+            > 
+
+            <div id="icon"> {val.icon}</div>
+            <div id="title">   
                 {val.title}
                 </div>
             </li>
