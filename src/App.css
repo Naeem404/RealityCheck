@@ -1,73 +1,80 @@
-/* App.css */
+  /* App.css */
 
-.App {
-  width: 100vw;
-  height: 100vh;
-  background-color: #7699dc;
-}
+  .App {
+    display: flex; /* Use flexbox to arrange items */
+    width: 100vw;
+    height: 100vh;
+    background-color: #7699dc;
+  }
 
-body {
-  margin: 0;
-  padding: 0;
-}
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-.Sidebar {
-  float: left; /* or float: right; depending on where you want it */
-  height: 100%;
-  width: 250px; /* removed the space between value and unit */
-  background: linear-gradient(to top, #1e345e, #8AB9F6);
-  display: flex;
-  flex-direction: column;
-  
-}
-.SidebarList
-{
-  height: auto;
-  padding: 0;
-  width: 100%;
+  .Sidebar {
+    width: 250px; 
+    background: linear-gradient(to top, #79B7F8, #79B7F8);
+    display: flex;
+    flex-direction: column;
+  }
+  .SidebarList {
+    height: auto;
+    padding: 0;
+    width: 100%;
+  }
 
-}
+  .SidebarList .row {
+    height: 50px;
+    list-style-type: none;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
 
-.SidebarList .row 
-{
-  width : auto;
-  height : 50px;
-  list-style-type: none;
-  margin : 10%;
-  display : flex;
-  flex-direction: row;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+  .SidebarList .row:hover {
+    cursor: pointer;
+    background-color: #1e345e;
+  }
 
-.SidebarList .row:hover
-{
-  cursor: pointer;
-  background-color: #1e345e;
-}
-.SidebarList #active
-{
-  background-color: #1e345e;
-}
-.row #icon 
-{
-  flex : 30%;
-  display : grid;
-  place-items: center;
-}
+  .SidebarList #active {
+    background-color: #1e345e;
+  }
 
-.row #title 
-{
-  flex : 70%;
-} 
+  .row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+  }
 
-.Logo img {
-  width: 80%; /* adjust as needed */
-  height: auto; /* adjust as needed */
-  margin-bottom: 20px; /* adjust as needed */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .row #title {
+    flex: 70%;
+  } 
+
+  .Logo img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .MainContent {
+    flex: 1; /* Take remaining space */
+    padding: 20px; /* Add some padding */
+  }
+
+  .messageBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* adjust as needed */
+    height: 80%; /* adjust as needed */
+    overflow: auto; /* add scroll if content overflows */
+  }
