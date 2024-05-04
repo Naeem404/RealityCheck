@@ -1,12 +1,19 @@
+/* App.css */
 
 .App {
-  width: 100vb;
-  height: 100vb;
-  background-color: #5e87d8;
+  width: 100vw;
+  height: 100vh;
+  background-color: #7699dc;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
 
+.Sidebar {
+  float: left; /* or float: right; depending on where you want it */
+  height: 100%;
+  width: 250px; /* removed the space between value and unit */
+  background: linear-gradient(to top, #1e345e, #759ce9);
+}
