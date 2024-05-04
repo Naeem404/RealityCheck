@@ -71,6 +71,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 #play-button {
   position: fixed;
   bottom: 20px;
@@ -78,16 +79,17 @@ body {
   background-color: #FFD700;
   color: #2E2E2E;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 15px 30px; /* Increased padding */
+  font-size: 20px; /* Increased font size */
+  border-radius: 8px; /* Adjusted border-radius */
   cursor: pointer;
 }
 
 #video-container {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
+  top: 50%;
+  left: calc(50% + 125px); /* Assuming the sidebar is 250px wide */
+  transform: translate(-50%, -50%);
   display: none;
   border-radius: 8px;
 }
