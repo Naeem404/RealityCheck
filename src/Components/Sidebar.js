@@ -3,10 +3,14 @@
 import React from 'react';
 import '../App.css';
 import {data} from './data';
+import logo from '../resources/logo.png';
 
 function Sidebar() {
     return (
     <div className="Sidebar">
+         <div className="Logo">
+                <img src={logo} alt="Logo" />
+            </div>
         <ul className= "SidebarList">
         {data.map((val,key)=> {
         return (

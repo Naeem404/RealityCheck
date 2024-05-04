@@ -15,10 +15,10 @@ body {
   float: left; /* or float: right; depending on where you want it */
   height: 100%;
   width: 250px; /* removed the space between value and unit */
-  background: linear-gradient(to top, #1e345e, #759ce9);
+  background: linear-gradient(to top, #1e345e, #8AB9F6);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  
 }
 .SidebarList
 {
@@ -62,3 +62,12 @@ body {
 {
   flex : 70%;
 } 
+
+.Logo img {
+  width: 80%; /* adjust as needed */
+  height: auto; /* adjust as needed */
+  margin-bottom: 20px; /* adjust as needed */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
