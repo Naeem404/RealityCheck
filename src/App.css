@@ -47,6 +47,10 @@ body {
   cursor: pointer;
   background-color: #1e345e;
 }
+.SidebarList #active
+{
+  background-color: #1e345e;
+}
 .row #icon 
 {
   flex : 30%;
