@@ -12,12 +12,12 @@ export const data = [
     {
     title: " Results",
     icon:<SignalCellularAltIcon/>,
-    link:"/chat"
+    link:"/results"
     },
     {
     title: " Recommendations",
     icon:<VolunteerActivismIcon/>,
-    link:"/chat"
+    link:"/recommendations"
     }
 
 ]
