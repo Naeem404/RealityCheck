@@ -23,7 +23,25 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    -->  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech and Video Player</title>
+    <style>
+        #video-container {
+            width: 640px;
+            height: 360px;
+            margin: auto;
+            display: none; /* Hide video initially */
+        }
+
+        #play-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
     <title>React App</title>
   </head>
   <body>
@@ -38,6 +56,47 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    -->   <button id="play-button">Play Video</button>
+    <div id="video-container">
+      <iframe id="video-frame" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      // Function to play the video
+      function playVideo() {
+          var videoUrl = "https://www.youtube.com/embed/Gs069dndIYk";
+          $("#video-frame").attr("src", videoUrl);
+          $("#video-container").show(); // Show the video player
+      }
+
+      // Function to handle speech recognition
+      function startSpeechRecognition() {
+          var recognition = new webkitSpeechRecognition();
+          recognition.continuous = false;
+          recognition.lang = "en-US";
+
+          recognition.onresult = function(event) {
+              var result = event.results[0][0].transcript.toLowerCase();
+              console.log("Speech Recognition Result:", result);
+
+              // Check if the speech input contains any trigger phrases
+              if (result.includes("watch") || result.includes("play")) {
+                  playVideo();
+              }
+          }
+
+          recognition.onerror = function(event) {
+              console.error("Speech Recognition Error:", event.error);
+          }
+
+          recognition.start();
+      }
+
+      // Event listener for the play button
+      document.getElementById("play-button").addEventListener("click", function() {
+          startSpeechRecognition();
+      });
+  </script>
   </body>
 </html>
